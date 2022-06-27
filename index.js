@@ -13,12 +13,17 @@ const arrMaker = () => {
     console.log(arr);
     return arr;
 } //Создается массив из 10 чисел
+const arr = arrMaker(); // теперь работаем с этой переменной
+console.log(arr);
+
 
 const Max = () => {
-    let max = Math.max.apply(arrMaker);
+    let max = Math.max(arr);
     console.log(max);
     return max;
 }
+const max = Max();
+console.log(max);
 
 const Min = () => {
     let min = Math.min.apply(arrMaker);
@@ -31,13 +36,12 @@ const Average = () => {
 
 const counter = () => {
     document.getElementById('container').innerHTML = "";
-    const NewArr = arrMaker();
     const par = document.createElement("p"); //"p" - параграф
-    par.innerText = `Случайные числа: ${NewArr}`;
+    par.innerText = `Случайные числа: ${arr}`;
     document.getElementById('container').appendChild(par);
 
     const NewMax = Max();
-    par.innerText = `Максимум: ${NewMax}`;
+    par.innerText = `Максимум: ${max}`;
     document.getElementById('container').appendChild(par);
     
     // const NewMin = Min();
