@@ -69,32 +69,32 @@ const counter = () => {
     document.getElementById('container').innerHTML = "";
 
     const par1 = document.createElement("p"); //"p" - параграф
-    par1.innerText = `Случайное число: ${arr}`;
+    par1.innerText = `Случайное число: ${getRandomIntInclusive(-10, 10)}`;
     document.getElementById('container').appendChild(par1);
 
-    const par = document.createElement("p"); //"p" - параграф
-    par.innerText = `Случайные числа: ${arr}`;
-    document.getElementById('container').appendChild(par);
-
     const par2 = document.createElement("p"); //"p" - параграф
-    par2.innerText = `Максимум: ${max}`;
+    par2.innerText = `Случайные числа: ${arr}`;
     document.getElementById('container').appendChild(par2);
 
     const par3 = document.createElement("p"); //"p" - параграф
-    par3.innerText = `Минимум: ${min}`;
+    par3.innerText = `Максимум: ${max}`;
     document.getElementById('container').appendChild(par3);
 
     const par4 = document.createElement("p"); //"p" - параграф
-    par4.innerText = `Среднее арифметическое: ${aver}`;
+    par4.innerText = `Минимум: ${min}`;
     document.getElementById('container').appendChild(par4);
 
     const par5 = document.createElement("p"); //"p" - параграф
-    par5.innerText = `Сумма: ${Sum()}`;
+    par5.innerText = `Среднее арифметическое: ${aver}`;
     document.getElementById('container').appendChild(par5);
 
     const par6 = document.createElement("p"); //"p" - параграф
-    par6.innerText = `Сумма: ${Multi()}`;
+    par6.innerText = `Сумма: ${Sum()}`;
     document.getElementById('container').appendChild(par6);
+
+    const par7 = document.createElement("p"); //"p" - параграф
+    par7.innerText = `Сумма: ${Multi()}`;
+    document.getElementById('container').appendChild(par7);
 }
 
 
