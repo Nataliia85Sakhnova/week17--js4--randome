@@ -29,15 +29,6 @@ const Min = () => {
 const min = Min();
 console.log("Min", min);
 
-// const Sum = () => {
-//     let s = 0;
-//     const resultSum = arr.reduce((acc, item) => {
-//         return acc + item;
-//     }, 0)
-//     return resultSum;
-// }
-// console.log("Сумма", Sum());
-
 const Sum = () => {
     let s = 0;
     // 1 вариант:
@@ -53,7 +44,20 @@ const Sum = () => {
     }, 0)
     return resultSum;
 }
-console.log("Сумма", Sum());
+console.log("Sum", Sum());
+
+const sum = Sum();
+const Average = sum / arr.length;
+console.log("Aver", Average);
+
+const Multi = () => {
+    let m = 1;
+    const resultMulti = arr.reduce((acc, item) => {
+        return acc * item;
+    }, 1)
+    return resultMulti;
+}
+console.log("Multi", Multi());
 
 const counter = () => {
     document.getElementById('container').innerHTML = "";
@@ -70,16 +74,20 @@ const counter = () => {
     par3.innerText = `Минимум: ${NewMin}`;
     document.getElementById('container').appendChild(par3);
 
-    // const NewAver = Average();
-    // const par4 = document.createElement("p"); //"p" - параграф
-    // par4.innerText = `Среднее арифметическое: ${NewAver}`;
-    // document.getElementById('container').appendChild(par4);
+    const par4 = document.createElement("p"); //"p" - параграф
+    par4.innerText = `Среднее арифметическое: ${Average}`;
+    document.getElementById('container').appendChild(par4);
 
     const NewSum = Sum();
     const par5 = document.createElement("p"); //"p" - параграф
     par5.innerText = `Сумма: ${NewSum}`;
     document.getElementById('container').appendChild(par5);
+
+    const par6 = document.createElement("p"); //"p" - параграф
+    par6.innerText = `Сумма: ${Multi()}`;
+    document.getElementById('container').appendChild(par6);
 }
+
 
 
 document.getElementById('button').onclick = () => counter(); //кнопка+функция
