@@ -1,3 +1,4 @@
+//1. Случайное число
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -5,6 +6,7 @@ function getRandomIntInclusive(min, max) {
 }
 console.log("Random", getRandomIntInclusive(-10, 10));
 
+//2. Массив из 10 случайных чисел
 const arrMaker = () => {
     let arr = [];
     for (let i = 0; i < 10; i++) {
@@ -12,9 +14,10 @@ const arrMaker = () => {
     }
     console.log("Array", arr);
     return arr;
-} //Создается массив из 10 чисел
+}
 const arr = arrMaker();
 
+//3. Максимум
 const Max = () => {
     let max = Math.max.apply(null, arr);
     return max;
@@ -22,6 +25,7 @@ const Max = () => {
 const max = Max();
 console.log("Max", max);
 
+//4. Минимум
 const Min = () => {
     let min = Math.min.apply(null, arr);
     return min;
@@ -29,6 +33,7 @@ const Min = () => {
 const min = Min();
 console.log("Min", min);
 
+//5. Сумма
 const Sum = () => {
     let s = 0;
     // 1 вариант:
@@ -46,10 +51,11 @@ const Sum = () => {
 }
 console.log("Sum", Sum());
 
-const sum = Sum();
-const Average = sum / arr.length;
-console.log("Aver", Average);
+//6. Среднее арифметическое
+const aver = Sum() / arr.length;
+console.log("Aver", aver);
 
+// 7. Умножение
 const Multi = () => {
     let m = 1;
     const resultMulti = arr.reduce((acc, item) => {
@@ -61,6 +67,11 @@ console.log("Multi", Multi());
 
 const counter = () => {
     document.getElementById('container').innerHTML = "";
+
+    const par1 = document.createElement("p"); //"p" - параграф
+    par1.innerText = `Случайное число: ${arr}`;
+    document.getElementById('container').appendChild(par1);
+
     const par = document.createElement("p"); //"p" - параграф
     par.innerText = `Случайные числа: ${arr}`;
     document.getElementById('container').appendChild(par);
@@ -69,18 +80,16 @@ const counter = () => {
     par2.innerText = `Максимум: ${max}`;
     document.getElementById('container').appendChild(par2);
 
-    const NewMin = Min();
     const par3 = document.createElement("p"); //"p" - параграф
-    par3.innerText = `Минимум: ${NewMin}`;
+    par3.innerText = `Минимум: ${min}`;
     document.getElementById('container').appendChild(par3);
 
     const par4 = document.createElement("p"); //"p" - параграф
-    par4.innerText = `Среднее арифметическое: ${Average}`;
+    par4.innerText = `Среднее арифметическое: ${aver}`;
     document.getElementById('container').appendChild(par4);
 
-    const NewSum = Sum();
     const par5 = document.createElement("p"); //"p" - параграф
-    par5.innerText = `Сумма: ${NewSum}`;
+    par5.innerText = `Сумма: ${Sum()}`;
     document.getElementById('container').appendChild(par5);
 
     const par6 = document.createElement("p"); //"p" - параграф
